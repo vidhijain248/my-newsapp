@@ -101,7 +101,7 @@ export class News extends Component {
                     element.description ? element.description.slice(0, 88) : ""
                   }
                   imgUrl={element.urlToImage}
-                  newsUrl={element.url} author={element.author} date={element.publishedAt}
+                  newsUrl={element.url} author={element.author} date={element.publishedAt }
                 />
               </div>
             );
@@ -134,3 +134,5 @@ export class News extends Component {
 }
 
 export default News;
+
+klklklk
