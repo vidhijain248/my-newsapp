@@ -24,6 +24,29 @@ export class News extends Component {
       page: 1,
     };
   }
+//   async updateNews(pageNo){
+//     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=dbe57b028aeb41e285a226a94865f7a7&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+//     this.setState({ loading: true });
+//     let data = await fetch(url);
+//     let parsedData = await data.json()
+//     this.setState({
+//         articles: parsedData.articles,
+//         totalResults: parsedData.totalResults,
+//         loading: false
+//     })
+// }
+// async componentDidMount(){
+//   this.updateNews();
+// }
+// handlePrevClick = async () => {
+//   this.setState({ page: this.state.page - 1 });
+//   this.updateNews();
+// }
+// handleNextClick = async () => {
+//   this.setState({ page: this.state.page + 1 });
+//   this.updateNews();
+// }
+  
   async componentDidMount() {
     // console.log("cdm");
 
@@ -101,7 +124,7 @@ export class News extends Component {
                     element.description ? element.description.slice(0, 88) : ""
                   }
                   imgUrl={element.urlToImage}
-                  newsUrl={element.url} author={element.author} date={element.publishedAt }
+                  newsUrl={element.url} author={element.author} date={element.publishedAt } source={element.source.name}
                 />
               </div>
             );
